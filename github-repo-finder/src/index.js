@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainBody from './App';
+import MainBody from './MainBody';
 import reportWebVitals from './reportWebVitals';
+
+const headerStyle={
+  backgroundColor:"#479f76",
+  padding:"20px"
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <div><h2> GITHUB CARD APP </h2></div>
+    <div style={headerStyle}><h2> GITHUB REPO FINDER </h2></div>
     <MainBody />
   </React.StrictMode>,
   document.getElementById('root')
