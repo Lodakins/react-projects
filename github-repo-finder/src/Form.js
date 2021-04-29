@@ -38,12 +38,17 @@ class Form extends Component{
       return(
           <div className="container-fluid" style={{backgroundColor:"#eee"}}>
               <div className="row">
-                  <div className="col-md-6 mx-auto">
+                  <div className="col-md-7 mx-auto">
                   <form  style={{padding:"10px"}} onSubmit={this.handleSubmit} >
-                    <label> Enter a name</label>
+                    <label className="mb-2" style={{fontSize:"20px"}}> Enter a repo name.</label>
                     <input type="text" className="form-control"  required  value={this.state.value} onChange={this.state.handleChange}  />
-                    <button type="Submit" className="btn btn-lg mt-3" style={btnStyle}> Search </button>
+                    <button type="Submit" className="btn btn-lg mt-3" style={btnStyle} > {this.props.btnText} </button>
                 </form>
+                  </div>
+                  <div className="col-md-4">
+                      <select>
+                          
+                      </select>
                   </div>
               </div>
             

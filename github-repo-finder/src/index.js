@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import MainBody from './MainBody';
 import reportWebVitals from './reportWebVitals';
+import ClickyButton from "./ClickyButton";
 
 const headerStyle={
   backgroundColor:"#479f76",
