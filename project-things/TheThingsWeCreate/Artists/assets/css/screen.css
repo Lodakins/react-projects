@@ -1,0 +1,519 @@
+body
+{
+	font-family: arial, verdana, helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: #666666; /*background: #2a2a2a url(../images/background.gif) bottom repeat-x;*/ 
+	background: #666666 url('../../../images/bg.jpg') repeat left top;
+	overflow: hidden;
+	/*background: #666666 url('../images/Clutch-Alt_Take.jpg') no-repeat left top;
+	background-attachment: scroll;
+	background-position:center;*/
+	
+}
+
+#bgFader
+{
+	position:absolute;
+	top:0px;
+	right:0px;
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	background-color: #666666;
+	border:2px solid red;
+	background: #666666 url('../images/Clutch-Alt_Take.jpg') no-repeat left top;
+	opacity:0.1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+}
+
+
+	
+	.hidden {
+		display: none; }
+		
+#bioContainer 
+	{
+		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		width: 950px;
+		max-width: 950px;
+		}
+	
+	#container 
+	{
+		z-index: 10;
+		position: relative;
+		margin: 0 auto;
+		width: 950px;
+		max-width: 950px;
+		background: url(../images/objects.png) bottom no-repeat; 
+		opacity:1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);	}
+
+		
+		#innerContainer 
+		{
+			z-index: 10;
+			position: relative;
+			margin: 0 auto;
+			padding-bottom: 230px;
+			width: 690px;
+			max-width: 690px;
+			text-align: left; 
+			
+		}
+			
+			#artistsHeader 
+			{
+				z-index: 10;
+				position: relative;
+				height: 122px;
+				/*background: url(../images/header.gif) top left no-repeat; */}
+				
+				#artistsHeader h1 a {
+					text-indent: -3000em;
+					position: absolute;
+					top: 54px;
+					left: 0;
+					width: 315px;
+					height: 36px; }
+					
+				.blue #artistsHeader h1 a {
+					background: url(../images/schemes/blue/sitename.gif) no-repeat; }
+					
+				.green #artistsHeader h1 a {
+					background: url(../images/schemes/green/sitename.gif) no-repeat; }
+					
+				.orange #artistsHeader h1 a {
+					background: url(../images/schemes/orange/sitename.gif) no-repeat; }
+						
+				#artistsHeader h1.plaintext a {
+					text-indent: 0;
+					background: none;
+					width: auto;
+					font-size: 36px;
+					font-weight: normal;
+					color: #ffffff;
+					text-decoration: none;
+					text-transform: uppercase; }
+					
+					#artistsHeader h1.plaintext a span {
+						font-weight: bold; }
+					
+					.blue #artistsHeader h1.plaintext a span {
+						color: #2b8fff; }
+					
+					.green #artistsHeader h1.plaintext a span {
+						color: #9eff2b; }
+					
+					.orange #artistsHeader h1.plaintext a span {
+						color: #ff7b2b; }
+					
+				#navigation {
+					position: absolute;
+					bottom: 0;
+					right: 0; }
+						
+						#navigation li {
+							float: left; }
+							
+							#navigation a {
+								display: block;
+								margin-top: 10px;
+								margin-right: 3px;
+								width: 100px;
+								height: 20px;
+								line-height: 20px;
+								text-align: center;
+								font-size: 11px;
+								text-decoration: none;
+								color: #ffffff;
+								text-transform: lowercase; }
+																
+							#navigation a:hover {
+								margin-top: 0;
+								height: 30px;
+								color: #ffffff;
+								text-decoration: none; }
+								
+							#navigation a.active {
+								margin-top: 0;
+								height: 30px; }
+								
+							.blue #navigation a {
+								background: url(../images/schemes/blue/tab.gif) no-repeat; }
+								
+							.green #navigation a {
+								background: url(../images/schemes/green/tab.gif) no-repeat; }
+								
+							.orange #navigation a {
+								background: url(../images/schemes/orange/tab.gif) no-repeat; }
+				
+			#artistContent {
+				position: relative;
+				border: 3px solid #ffffff;
+				background-color: #3b3b3b;
+				line-height: 1.5em; 
+				background: #666666 url('../images/Clutch-Alt_Take.jpg') no-repeat left top;
+				background-position:center;
+				
+				/*opacity:0.3; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);*/
+			}
+				
+				#artistContent h2,
+				#artistContent h3,
+				#artistContent h4,
+				#artistContent h5,
+				#artistContent p,
+				#artistContent ul,
+				#artistContent ol,
+				#artistContent form,
+				#artistContent table,
+				#artistContent img,
+				#artistContent object {
+					margin-bottom: 10px; }
+					
+				#artistContent h2,
+				#artistContent h3,
+				#artistContent h4,
+				#artistContent h5 {
+					font-weight: normal;
+					color: #ffffff; }
+					
+				#artistContent h2 {
+					font-size: 18px; }
+				
+				#artistContent h3 {
+					font-size: 16px; }
+					
+				#artistContent h4 {
+					font-size: 14px; }
+					
+				#artistContent h5 {
+					font-size: 12px; }
+					
+				#artistContent img {
+					border: 1px solid #1f1f1f; }
+					
+				#artistContent a {
+					text-decoration: none; }
+					
+				#container #artistContent a:hover {
+					cursor: pointer;
+					color: #ffffff;
+					text-decoration: none; }
+					
+				.blue #artistContent a {
+					color: #2b8fff; }
+					
+				.blue #artistContent a:hover {
+					background-color: #2b8fff; }
+					
+				.green #artistContent a {
+					color: #9eff2b; }
+					
+				.green #artistContent a:hover {
+					background-color: #9eff2b; }
+					
+				.orange #artistContent a {
+					color: #ff7b2b; }
+					
+				.orange #artistContent a:hover {
+					background-color: #ff7b2b; }
+					
+				#artistContent strong {
+					font-weight: bold; }
+					
+				#artistContent em {
+					font-style: italic; }
+					
+				#artistContent acronym {
+					border-bottom-width: 1px;
+					border-bottom-style: dotted; }
+					
+				#artistContent ul,
+				#artistContent ol {
+					padding-left: 30px; }
+				
+				.blue #artistContent ul,
+				.blue #artistContent ol {
+					color: #2b8fff; }
+					
+				.green #artistContent ul,
+				.green #artistContent ol {
+					color: #9eff2b; }
+					
+				.orange #artistContent ul,
+				.orange #artistContent ol {
+					color: #ff7b2b; }
+					
+				#artistContent ul span,
+				#artistContent ol span {
+					color: #666666; }
+					
+				#artistContent ul {
+					list-style: disc; }
+					
+				#artistContent ol {
+					list-style: decimal; }
+					
+				#artistContent table {
+					border-collapse: collapse; }
+					
+					#artistContent table td {
+						padding: 4px 8px;
+						vertical-align: top;
+						color: #666666;
+						font-size: 12px; }
+						
+					#artistContent table thead td {
+						color: #ffffff;
+						font-size: 12px;
+						font-weight: bold; }
+						
+					.blue #artistContent table thead td {
+						background-color: #2b8fff; }
+						
+					.green #artistContent table thead td {
+						background-color: #9eff2b; }
+						
+					.orange #artistContent table thead td {
+						background-color: #ff7b2b; }
+						
+				#artistContent form div {
+					clear: both; }
+					
+					#artistContent form div label {
+						float: left;
+						margin-bottom: 5px;
+						line-height: 30px;
+						width: 270px; }
+					
+					#artistContent form div input,
+					#artistContent form div select,
+					#artistContent form div textarea {
+						float: left;
+						margin-left: 10px;
+						padding: 8px 5px;
+						width: 350px;
+						border: 5px solid #555555;
+						color: #1f1f1f;
+						background-color: #ffffff;
+						font-family: arial, verdana, helvetica, sans-serif;
+						font-size: 12px; }
+						
+					.blue #artistContent form div input:focus,
+					.blue #artistContent form div select:focus,
+					.blue #artistContent form div textarea:focus {
+						border-color: #2b8fff; }
+						
+					.green #artistContent form div input:focus,
+					.green #artistContent form div select:focus,
+					.green #artistContent form div textarea:focus {
+						border-color: #9eff2b; }
+					
+					.orange #artistContent form div input:focus,
+					.orange #artistContent form div select:focus,
+					.orange #artistContent form div textarea:focus {
+						border-color: #ff7b2b; }
+						
+					#artistContent form div input,
+					#artistContent form div select {
+						height: 15px; }
+						
+				#artistContent .help {
+					display: block;
+					margin-top: -15px;
+					font-size: 11px;
+					font-style: italic;
+					color: #ffffff; }
+						
+				#artistContent .button {
+					clear: both;
+					margin: 10px 14px 10px 0;
+					float: right;
+					border: 0;
+					width: 100px;
+					height: 30px;
+					cursor: pointer;
+					color: #ffffff;
+					font-family: arial, verdana, helvetica, sans-serif;
+					font-size: 11px;
+					text-transform: lowercase; }
+					
+				.blue #artistContent .button {
+					background: url(../images/schemes/blue/button.gif) no-repeat; }
+					
+				.green #artistContent .button {
+					background: url(../images/schemes/green/button.gif) no-repeat; }
+					
+				.orange #artistContent .button {
+					background: url(../images/schemes/orange/button.gif) no-repeat; }
+						
+				#artistContent .required {
+					font-size: 20px; }
+					
+				#artistContent .warning {
+					font-size: 12px; }
+					
+				.blue #artistContent .required,
+				.blue #artistContent .warning {
+					color: #2b8fff; }
+					
+				.green #artistContent .required,
+				.green #artistContent .warning {
+					color: #9eff2b; }
+					
+				.orange #artistContent .required,
+				.orange #artistContent .warning {
+					color: #ff7b2b; }
+					
+				#artistContent .formNote {
+					clear: both; }
+					
+				.body {
+					padding: 10px; background-color: #000000;
+					
+						opacity:0.8; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
+					
+				.biographyBody {
+					padding: 10px; 
+					background-color: #000000;
+					height: 400px;
+					overflow: auto;
+					opacity:0.9; 
+					filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+					scrollbar-base-color:#666666;
+					}
+					
+				.floatLeft {
+					float: left;
+					margin: 0 15px 10px 0; }
+					
+				.floatRight {
+					float: right;
+					margin: 0 0 10px 15px; }
+					
+				#portfolio {
+					position: relative;
+					width: 684px; }
+					
+				#portfolio.body {
+					padding: 0; }
+					
+					#portfolio .panel {
+						position: relative;
+						width: 684px;
+						background-color: #000000;
+						opacity:0.8; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80); }
+						
+					#artistContent #portfolio .carouselContainer {
+						margin: 0;
+						padding: 0;
+						list-style-type: none;
+						color: #666666; 
+						
+						}
+						
+						.carouselContainer li {
+							width: 684px; }
+							
+							.item .overview {
+								display: none;
+								position: relative;
+								padding: 10px 90px 0 10px;
+								height: 90px; 
+								}
+								
+							.item .overview.hasMediumImage {
+								padding-left: 105px;
+								}
+								
+							#browseArtistsHeading
+							{
+								font-size: 36px;
+								padding-top: 35px;
+							}		
+									
+							.item .overview.hasImage {
+								padding-left: 75px; 
+								}
+								
+								.item .overview img.small {
+									position: absolute;
+									top: 10px;
+									left: 10px; }
+									
+								.item .overview a.details {
+									position: absolute;
+									top: 10px;
+									right: 10px; opacity:1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
+								
+							.item .extended {
+								position: relative;
+								padding: 10px;
+								height: 280px; }
+								
+							.item .extended.hasImage {
+								padding-right: 290px; }
+								
+								.item .extended img.large {
+									position: absolute;
+									top: 10px;
+									right: 10px;  }
+					
+					.scrollButton {
+						z-index: 999;
+						text-indent: -3000em;
+						position: absolute;
+						bottom: -3px;
+						width: 45px;
+						height: 45px; }
+						
+					#container #artistContent .scrollButton:hover {
+						cursor: pointer;
+						background-color: transparent; }
+						
+					#previous {
+						left: -35px; }
+						
+					#next {
+						right: -35px; }
+						
+					.blue #previous {
+						background: url(../images/schemes/blue/previous.gif) no-repeat; }
+						
+					.blue #next {
+						background: url(../images/schemes/blue/next.gif) no-repeat; }
+						
+					.green #previous {
+						background: url(../images/schemes/green/previous.gif) no-repeat; }
+						
+					.green #next {
+						background: url(../images/schemes/green/next.gif) no-repeat; }
+						
+					.orange #previous {
+						background: url(../images/schemes/orange/previous.gif) no-repeat; }
+						
+					.orange #next {
+						background: url(../images/schemes/orange/next.gif) no-repeat; }
+				
+				#footer {
+					position: relative;
+					clear: both;
+					height: 42px;
+					line-height: 42px;
+					text-align: right;
+					font-size: 11px;
+					color: #3b3b3b;
+					background: url(../images/footer.gif) repeat-x; }
+					
+					#artistContent #footer p {
+						margin: 0;
+						padding: 0 30px; }
+						
+					#footer	a:hover {
+								margin-top: 10;
+								height: 30px;
+								color: #ffffff;
+								text-decoration: none; }

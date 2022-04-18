@@ -1,0 +1,10 @@
+.cell{
+    border:1px solid #efefef;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+img{
+   width: 199px;
+   height: 199px; 
+}

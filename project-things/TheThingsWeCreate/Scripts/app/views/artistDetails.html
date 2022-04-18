@@ -1,0 +1,112 @@
+﻿<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" style="top:0px;">
+        <div class="jumbotron other-color sharp-top-borders  artist-content-drk-thin-border" ng-style="{'opacity':'.9'}">
+
+            <h1><u>CONTACT US</u></h1>
+            <p>
+                <strong style="color:burlywood;">Telephone</strong>: <strong>+44 790 952 6808</strong>
+                <br />
+                <strong style="color:burlywood;">Email</strong>: <strong>info@TheThingsWeCreate.com</strong>
+                <br/>
+                <strong style="color:burlywood; font-size: 12pt;">or use the form below</strong>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <!-- BEGIN [content] -->
+            <div id="artistContent" ng-style="{'background':'url(../../../Artists/assets/{{tmpArtistName}}/background.jpg)'}" ng-class="notabs? 'artist-content-drk-thin-border': ''">
+
+                <!-- BEGIN [biography] -->
+                <div id="biography" class="biographyBody">
+                    <div ng-show="action == 'biography' || action == 'portfolio'" ng-class="slide && action == 'portfolio'? 'semi-transparent' : ''">
+                        <h2 id="bioHeading" style="margin-top:0px;">{{artistName}}</h2>
+                        <h4 id="bioSubHeading" style="font-style:italic; margin-left: 10px" ng-bind-html="currentArtistBioSubHeading">&nbsp;&nbsp;&nbsp;</h4>
+                        <div>
+                            <img id="bioImage" class="img-responsive" style="max-height:250px!important; float:left; margin:5px 10px 10px 10px ;opacity:1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);" src="../../../Artists/Assets/{{tmpArtistName}}/bioImage.jpg">
+                            <div ng-bind-html="currentArtistBio" ng-style="{'color': '#A79F9F'}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ng-show="action == 'portfolio'" ng-style="{'z-index':'0!important'}">
+                        <div class="portfoliPlayercontainer animate-slide" ng-show="slide">
+                            <div class="overview hasImage" id="playerContainer">
+                                <span ng-click="slide=!slide" class="collapse-music-player-panel togglePlayer-button" aria-hidden="true"><img src="http://lawdshouse.com/mobile/Content/image/icomoon/entypo-25px-ffffff/SVG/list2.svg" style="border:0px; margin-bottom:0px!important;" /></span>
+                                <span ng-click="slide=!slide" ng-show="slide" ng-style="{'padding':'5px', 'cursor':'pointer', 'color':'#A79F9F', 'font-family':'trebuchet ms'}">Hide Music Player</span>
+                                <span ng-click="slide=!slide" ng-show="!slide" ng-style="{'padding':'5px', 'cursor':'pointer', 'color':'#A79F9F', 'font-family':'trebuchet ms'}">Show Music Player</span>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ng-show="action == 'contact'" ng-style="{'z-index':'0!important'}">
+                        <!-- BEGIN [contact] -->
+                        <div id="contact">
+                            <h2 ng-show="!notabs">Contact {{artistName}}</h2>
+                            <form id="formContact" ng-submit="SendEmailTo(artistName)" method="post" enctype="application/x-www-form-urlencoded" role="form">
+                                <div>
+                                    <label for="inputContactName">
+                                        Name <span class="required" ng-show="myForm.inputContactName.$error.required">*</span>
+                                        <span class="help" ng-show="myForm.inputContactName.$dirty && myForm.inputContactName.$invalid">Please enter your fullname</span>
+                                    </label>
+                                    <input ng-style="{'height':'40px'}" id="inputContactName" name="inputContactName" type="text" value="" ng-model="myForm.inputContactName" required />
+                                </div>
+                                <div>
+                                    <label for="inputContactEmail">
+                                        Email <span class="required" ng-show="myForm.inputContactEmail.$error.required">*</span>
+                                        <span class="help" ng-show="myform.inputContactEmail.$invalid">Please enter a contactable email address</span>
+                                        <span class="help" ng-show="myForm.inputContactEmail.$error.email">Please enter a valid email address</span>
+                                    </label>
+                                    <input ng-style="{'height':'40px'}" id="inputContactEmail" name="inputContactEmail" type="email" value="" ng-model="myForm.inputContactEmail" required />
+                                </div>
+                                <div>
+                                    <label for="inputContactSubject">
+                                        Subject <span class="required" ng-show="myForm.inputContactSubject.$error.required">*</span>
+                                        <span class="help" ng-show="myForm.inputContactSubject.$dirty && myForm.inputContactSubject.$invalid">Please enter a subject for your message</span>
+                                    </label>
+                                    <input ng-style="{'height':'40px'}" id="inputContactSubject" name="inputContactSubject" type="text" value="" ng-model="myForm.inputContactSubject" required />
+                                </div>
+                                <div>
+                                    <label for="inputContactMessage">
+                                        Message <span class="required" ng-show="myForm.inputContactMessage.$error.required">*</span>
+                                        <span class="help" ng-show="myForm.inputContactMessage.$dirty && myForm.inputContactMessage.$invalid">Please enter your message here</span>
+                                    </label>
+                                    <textarea id="inputContactMessage" name="inputContactMessage" rows="3" cols="30" ng-model="myForm.inputContactMessage" required></textarea>
+                                </div>
+                                <br />
+                                <p />
+                                <p>
+                                    <input id="buttonSend" class="btn btn-primary btn-small" value="Send Message" type="submit"
+                                           ng-disabled="myForm.inputContactName.$dirty && myForm.inputContactName.$invalid || myForm.inputContactName.$error.required ||
+                                myForm.inputContactEmail.$dirty && myForm.inputContactEmail.$invalid || myForm.inputContactEmail.$error.required || myForm.inputContactEmail.$error.email ||
+                                myform.inputContactSubject.$dirty && myform.inputContactSubject.$invalid || myForm.inputContactSubject.$error.required ||
+                                myForm.inputContactMessage.$dirty && myForm.inputContactMessage.$invalid || myform.inputContactMessage.$error.required" />
+                                </p>
+                                <p ng-bind-html="emailResult" style="color: #ffffff"></p>
+                            </form>
+                            <p class="formNote" ng-show="false"><span class="required">*</span> indicates a required field</p>
+                        </div>
+                        <!-- END [contact] -->
+                    </div>
+                </div>
+
+                <!-- END [biography] -->
+                <!-- BEGIN [footer] -->
+                <div id="footer">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Website by L.Adeokun&nbsp;&nbsp; Copyright &copy; 2016 <a href="#">TheThingsWeCreate</a>, L. Adeokun.</p>
+                </div>
+                <!-- END [footer] -->
+
+            </div>
+            <!-- END [content] -->
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br />

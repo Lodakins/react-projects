@@ -1,0 +1,84 @@
+﻿<nav id="videoNavBar" class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" ng-show="!calledFromOther">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isFilterMenuCollapsed = !isFilterMenuCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><span class="label label-info" style="margin-right: 20px;">Filter By</span></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" collapse="isFilterMenuCollapsed">
+
+            <span ng-click="musicVideosClick()" ng-class="filterButtonClass(musicvideos)" ng-hide="currentVideo != ''" aria-label="Music Video">
+                music videos
+            </span>
+            <span type="button" ng-click="movieClipsClick()" ng-class="filterButtonClass(movieclips)" ng-hide="currentVideo != ''" aria-label="Movie Clips">
+                movie clips
+            </span>
+            <span type="button" ng-click="eventsVideosClick()" ng-class="filterButtonClass(eventsclips)" ng-hide="currentVideo != ''" aria-label="Events Videos">
+                events
+            </span>
+            <span type="button" ng-click="miscVideosClick()" ng-class="filterButtonClass(miscvideos)" ng-hide="currentVideo != ''" aria-label="Misc Videos">
+                misc
+            </span>
+        </div>
+    </div>
+</nav>
+<div class="row" ng-style="{'margin-top':'-15px','margin-bottom':'20px'}">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div id="videocontainer" class="row" style="min-height:260px!important; overflow-y:visible; ">
+
+
+    <div class="col-md-12" style="height:100%!important; overflow-y:visible;">
+        <div id="videoInnerContainer" class="ps-video-container">
+            <div class="ps-video-row" ng-show="{{videoItem.category}}" ng-animate="'fade'" ng-repeat="videoItem in videosList">
+                <!--<div class="other-color-videos music-videos-show" ng-style="{'opacity':'.9'}">-->
+                <div class="ps-video-desc" style="padding-right:0px; position:relative;">
+                    <div class="music-videos-show-iframe">
+                        <img src="{{videoItem.imgURL}}" title="Play" alt="Play video" class="img-responsive">
+                        <a ng-click="PlayVideo(videoItem.videoYTId, videoItem.id)" class="mp-play-video" title="Play Video">Play Video</a>
+                    </div>
+                    <p ng-style="{'opacity':'1', 'position':'absolute', 'left':'220px'}"><a class="btn btn-primary btn-sm" ng-click="setShowAboutVideo(videoItem.id)" role="button">About the video...</a></p>
+
+                    <p ng-style="{'opacity':'1', 'position':'absolute', 'left':'220px', 'top':'50px', 'text-wrap':'normal', 'font-size':'17px'}" class="img-responsive" ng-show="getShowAboutVideo(videoItem.id)" ng-bind-html="getVideoTitle(videoItem.id)">
+                    </p>
+                    <br />
+                </div>
+                <!-- </div> -->
+            </div>
+
+
+            <div style="height:100%!important; overflow-y:visible; padding-top:10px; font-family: 'Trebuchet MS',Arial;" ng-show="currentVideo != ''">
+                <span ng-click="closeCurrentVideo()" class="togglePlayer-button btn-lg" ng-style="{'border':'1px solid #3b3b3b', 'padding':'5px', 'margin-top':'5px',  'margin-left':'5px', 'cursor':'pointer'}" aria-hidden="true" title="Back to Videos">
+                    <img src="http://lawdshouse.com/images/close.png" ng-show="!calledFromOther" width="27" alt="Back to Videos" title="Back to Videos" style="margin-bottom: 4px;" />
+                    <img src="http://lawdshouse.com/images/close.png" ng-show="calledFromOther" width="27" alt="Back" title="Back" style="margin-bottom: 4px;" />
+                </span>
+                <span ng-click="closeCurrentVideo()" ng-style="{'padding':'5px', 'cursor':'pointer', 'color':'#A79F9F', 'font-family':'trebuchet ms'}"><font ng-show="!calledFromOther">Back to videos</font><font ng-show="calledFromOther">Back</font></span>
+                <span ng-click="calledFromOther = false; closeCurrentVideo()" ng-show="calledFromOther" ng-style="{'padding':'5px', 'cursor':'pointer', 'color':'#A79F9F', 'font-family':'trebuchet ms'}"><font>More videos...</font></span>
+                <br />
+                <br />
+                <center>
+                    <iframe id="videoPlayer" width="400" height="225" src="loading.html" frameborder="0" allowfullscreen></iframe>
+                    <div ng-bind-html="currentVideoDescription" style="color: #808080; margin-right:10px; margin-left:10px; width: 400px; height: 225px; padding:10px;  background: url('http://TheThingsWeCreate.com/images/bg.png') repeat scroll left top transparent">
+                    </div>
+                </center>
+            </div>
+        </div>
+
+        <div id="musicFooter" class="panel-footer">
+            <p>Website by <a href='#/artists/Lawds/contact/notabs'>L.Adeokun</a>&nbsp;&nbsp; Copyright &copy; 2015 <a href="#">Lawdshouse</a>.</p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />

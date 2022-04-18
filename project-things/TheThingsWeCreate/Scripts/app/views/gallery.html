@@ -1,0 +1,48 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isFilterMenuCollapsed = !isFilterMenuCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><span class="label label-info" style="margin-right: 20px;">Filter By</span></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" collapse="isFilterMenuCollapsed">
+
+            <span ng-click="musicVideosClick()" ng-class="filterButtonClass(musicvideos)" class="btn btn-success filter-videos-btn" aria-label="Music Video">
+                music videos
+            </span>
+            <span type="button" ng-click="movieClipsClick()" ng-class="filterButtonClass(movieclips)" class="btn btn-success filter-videos-btn" aria-label="Movie Clips">
+                movie clips
+            </span>
+            <span type="button" ng-click="eventsVideosClick()" ng-class="filterButtonClass(eventsclips)" class=" btn btn-success filter-videos-btn" aria-label="Events Videos">
+                events
+            </span>
+        </div>
+    </div>
+</nav>
+<div class="row" ng-style="{'margin-top':'-15px','margin-bottom':'20px'}">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row" style="height:600px!important; overflow-y:visible; ">
+    <div class="col-md-12" style="height:100%!important; overflow-y:visible;">
+        <div style="height:100%!important; overflow-y:auto; border:1px solid #3b3b3b;">
+
+        </div>
+
+        <div id="musicFooter" class="panel-footer">
+            <p>Website by <a href='#/artists/Lawds/contact/notabs'>L.Adeokun</a>&nbsp;&nbsp; Copyright &copy; 2015 <a href="#">Lawdshouse</a>.</p>
+        </div>
+    </div>;
+</div>
+<br />
+<br />
+<br />

@@ -1,0 +1,42 @@
+﻿<form id="formContact" method="post" ng-submit="SendEmailTo(artistName);" action="{{actionURL}}" enctype="application/x-www-form-urlencoded" name="myForm" novalidate>
+    <div>
+        <label for="inputContactName">
+            Name <span class="required" ng-show="myForm.inputContactName.$error.required">*</span>
+            <span class="help" ng-show="myForm.inputContactName.$dirty && myForm.inputContactName.$invalid">Please enter your fullname</span>
+        </label>
+        <input ng-style="{'height':'40px'}" id="inputContactName" name="inputContactName" type="text" value="" ng-model="inputContactName" required />
+    </div>
+    <div>
+        <label for="inputContactEmail">
+            Email <span class="required" ng-show="myForm.inputContactEmail.$error.required">*</span>
+            <span class="help" ng-show="myform.inputContactEmail.$invalid">Please enter a contactable email address</span>
+            <span class="help" ng-show="myForm.inputContactEmail.$error.email">Please enter a valid email address</span>
+        </label>
+        <input ng-style="{'height':'40px'}" id="inputContactEmail" name="inputContactEmail" type="email" value="" ng-model="inputContactEmail" required />
+    </div>
+    <div>
+        <label for="inputContactSubject">
+            Subject <span class="required" ng-show="myForm.inputContactSubject.$error.required">*</span>
+            <span class="help" ng-show="myForm.inputContactSubject.$dirty && myForm.inputContactSubject.$invalid">Please enter a subject for your message</span>
+        </label>
+        <input ng-style="{'height':'40px'}" id="inputContactSubject" name="inputContactSubject" type="text" value="" ng-model="inputContactSubject" required />
+    </div>
+    <div>
+        <label for="inputContactMessage">
+            Message <span class="required" ng-show="myForm.inputContactMessage.$error.required">*</span>
+            <span class="help" ng-show="myForm.inputContactMessage.$dirty && myForm.inputContactMessage.$invalid">Please enter your message here</span>
+        </label>
+        <textarea id="inputContactMessage" name="inputContactMessage" rows="3" cols="30" ng-model="inputContactMessage" required></textarea>
+    </div>
+    <br />
+    <p />
+    <p>
+        <input id="buttonSend" class="btn btn-primary btn-small" value="Send Message" type="submit"
+               ng-disabled="myForm.inputContactName.$dirty && myForm.inputContactName.$invalid || myForm.inputContactName.$error.required ||
+                                myForm.inputContactEmail.$dirty && myForm.inputContactEmail.$invalid || myForm.inputContactEmail.$error.required || myForm.inputContactEmail.$error.email ||
+                                myform.inputContactSubject.$dirty && myform.inputContactSubject.$invalid || myForm.inputContactSubject.$error.required ||
+                                myForm.inputContactMessage.$dirty && myForm.inputContactMessage.$invalid || myform.inputContactMessage.$error.required" />
+    </p>
+    <p>{{emailResult}}</p>
+</form>
+<p class="formNote"><span class="required">*</span> indicates a required field</p>

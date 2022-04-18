@@ -1,0 +1,40 @@
+﻿
+<div class="row" ng-style="{'margin-top':'-15px','margin-bottom':'20px'}">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"></div>
+    <div class="col-md-2"></div>
+</div>
+<div id="newscontainer" class="row" style="min-height:200px; overflow-y:visible; ">
+    <div class="col-md-12" style="height:100%!important; overflow-y:visible; ">
+        <div style="height:100%!important; overflow-y:visible;  border:1px solid #3b3b3b; position:relative; background-color:  #0c0c0c; opacity:0.8; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);">
+            <div class="news-nav">
+                <div class="col-md-3" style="padding:0px!important; border-bottom:1px solid #3b3b3b;" ng-repeat="newsItem in newsList">
+                    <span ng-click="newsButtonClick(newsItem.id)" ng-class="currentNews == '{{newsItem.id}}'? 'btn btn-success news-nav-tab-button' : 'btn btn-success news-nav-tab-button-inactive'" aria-label="Gathering P.A.C.E.">
+                        {{newsItem.menuTitle}}
+                    </span>
+                </div>
+            </div>
+            <div name="news" class="news-row col-md-12" ng-style="{'max-height': newsRowHeight, 'overflow-y': 'visible', 'padding': '0 0 0 0 '}" ng-repeat="newsItem in newsList">
+                <div id="news{{newsItem.id}}" ng-style="{'max-height': newsRowHeight}" style="margin:0 0 0 0;  top: 0px; padding-right:0px; position:relative; overflow-y:auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar;" ng-show="currentNews == '{{newsItem.id}}'">
+                    <div class="col-md-6" style="padding:10px; background-color:  #0c0c0c; opacity:0.8; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80); text-align: center;">
+                        <img src="{{newsItem.imgURL}}" width="580" height="400" style="margin:auto; display:block" class="img-responsive news-image" />
+                    </div>
+
+                    <div class="col-md-6" style="color:#f1e7e7; padding:10px; background-color:  #0c0c0c; opacity:0.8; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);">
+                        <center><p><strong style="font-size: 19px;">{{newsItem.title}}</strong></p></center>
+                        <div class="link-content" style="font-size:15px;" ng-bind-html="getNewsItemBody(newsItem.id)">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="musicFooter" class="panel-footer">
+            <p>Website by <a href='#/artists/Lawds/contact/notabs'>L.Adeokun</a>&nbsp;&nbsp; Copyright &copy; 2015 <a href="#">Lawdshouse</a>.</p>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />

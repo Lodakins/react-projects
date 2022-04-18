@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM  from 'react-dom';
 import './index.css';
 import AuthorQuiz from './AuthorQuiz';
+import AddAuthorForm from './AddAuthorForm';
 import registerServiceWorker from './registerServiceWorker';
 import {shuffle, sample} from 'underscore';
+import { BrowserRouter,Route,Link,withRouter} from "react-router-dom";
+import * as Redux from 'redux';
+import * as ReactRedux from 'react-redux';
+
+
+
 
 const authors = [
     {
@@ -61,9 +68,42 @@ function getTurnData(authors) {
     }
 }
 
-const state = {
-    turnData: getTurnData(authors)
-};
+function reducer(state ={authors,turnData: getTurnData(authors),
+  highLight:"none"},action){
 
-ReactDOM.render(<AuthorQuiz {...state} />, document.getElementById('root'));
-registerServiceWorker();
+    switch(action.type){
+      case "ANSWER_SELECTED":
+        const isCorrect =  state.turnData.author.books.includes(action.answer);
+        state = Object.assign({},state,{
+          highLight: isCorrect ? "correct":"incorrect"
+        })
+      break;
+      case "CONTINUE":
+        state =  Object.assign({},state,{
+          highLight:"none",
+          turnData:getTurnData(authors)
+        })
+      break;
+      case 'SUBMIT': 
+      state = Object.assign({},state,{
+        authors: authors.push(action.answer)
+      });
+      break;
+    }
+  return state;
+}
+
+let store = Redux.createStore(reducer);
+
+ReactDOM.render(
+    <BrowserRouter>
+     <ReactRedux.Provider store={store} >
+      <Route exact path="/" component={AuthorQuiz} />
+      <Route  path="/add" component={AddAuthorForm} />
+      </ReactRedux.Provider>
+    </BrowserRouter>
+  , document.getElementById('root'));
+  registerServiceWorker();
+
+
+

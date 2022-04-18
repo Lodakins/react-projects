@@ -1,0 +1,102 @@
+﻿<!--<div class="row">
+    <div class="col-md-12" style="text-align:center; ">
+        <center><img id="landingImage" ng-src="{{newProductImages[currentImage].src}}" class="img-responsive" style="margin:auto; display:block;" onclick="javascript: ShowBuyPanel(this, event)" /></center>
+    </div>
+</div>-->
+
+
+    <div id="carousel" data-interval="3000" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <!--<ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>-->
+        <ol class="carousel-indicators">
+            <li ng-repeat="link in links" data-target="#carousel" data-slide-to="{{$index}}" ng-class="$index==0? 'active':''" ng-click="goToSlide($index)"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <!--<div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img id="landingImage" ng-src="{{links[0].src}}" class="img-responsive" style="margin:auto; display:block;" />
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img id="landingImage1" ng-src="{{links[1].src}}" class="img-responsive" style="margin:auto; display:block;" />
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+            <div class="item">
+                <img id="landingImage1" ng-src="{{links[2].src}}" class="img-responsive" style="margin:auto; display:block;" />
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+        </div>-->
+
+        <div class="carousel-inner" role="listbox">
+            <div ng-repeat="link in links" ng-class="$index==0? 'item active':'item'" >
+                <img ng-src="{{link.src}}" alt="{{link.alt}}"  class="img-responsive" style="margin:auto; display:block;" ng-click="pauseCarousel()">
+                <div class="carousel-caption">
+                    Click image to pause slide show
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <span class="left carousel-control" href="#carousel" role="button" data-slide="prev" ng-click="stepBack()">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </span>
+        <span class="right carousel-control" href="#carousel" role="button" data-slide="next"  ng-click="stepNext()">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </span>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <div class="jumbotron other-color sharp" ng-style="{'opacity':'.9'}" ng-show="!showPACE" style="color:bisque">
+                <h1 style="color: whitesmoke; font-weight:bold;"><u>The STAYSTRAIGHT <i>lite</i></u></h1>
+                <p style="color: burlywood;"> 
+                    This <strong>NEW INVENTION,</strong> <font style="color: whitesmoke; font-weight: bold;">STAYSTRAIGHT <i>lite</i></font>,  makes your bicycle assembly a ride in the park.
+                    <br/><br/>
+                    There's <strong style="color: whitesmoke;">NOTHING LIKE IT</strong>, nor has there <strong style="color: whitesmoke;">EVER BEEN ANYTHING LIKE IT!</strong>
+                    <br /> For use at <i>home</i> or in <i>workshops</i>, this simple addresses an age-old issue: How to align your bicycle at right angles!
+                    <br/><br/>
+                    <strong style="color: whitesmoke;">Benefits</strong> include:
+                </p>
+                <ul>
+                    <li>   Improved riding posture</li>
+                    <li>   Improved aerodynamics</li>
+                    <li>   Quicker bike assembly</li>
+                </ul>
+                <p>
+                    Resulting in improved overall
+                    bike performance.
+                    <strong style="color: red;"></strong>
+                </p>
+                <br/>
+                <h3><u>Retailers</u></h3>
+                <p>
+                    To stock the <font style="color: antiquewhite; font-weight: bold;">STAYSTRAIGHT <i>lite</i></font>, contact us on +44 790 952 6808 or 
+                    <a href="#/wholesale" target="_self"><font style="color:burlywood!important;">Click Here for further information on purchasing</font></a>
+                </p>
+                
+
+                <br />
+                <h3><u>Licensors</u></h3>
+                <p>
+                    The <font style="color: antiquewhite; font-weight: bold;">STAYSTRAIGHT <i>lite</i></font> is also available to LICENSE. Contact us on +44 790 952 6808 or
+                    <a href="#/licensing" target="_self"><font style="color:burlywood!important;">Click Here for further information on licensing</font></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+

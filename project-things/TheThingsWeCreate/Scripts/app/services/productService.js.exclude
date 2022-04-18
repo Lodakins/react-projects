@@ -1,0 +1,24 @@
+﻿(function () {
+    "use strict";
+
+    var myAppModule = angular.module('myApp');
+    myAppModule.factory('productService', function () {
+
+        //var newProductImages = homeImages;
+
+        return {
+            getNewProductImages: function () {
+                return newProductImages;
+            },
+            getNewProductImage: function (NewProductImageId) {
+                var existingImage = null;
+                angular.forEach(newProductImages, function (NewProductImage) {
+                    if (NewProductImage.id == NewProductImageId) {
+                        existingImage = NewProductImage;
+                    }
+                });
+                return existingImage;
+            }
+        };
+    });
+})();

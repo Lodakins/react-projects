@@ -1,0 +1,32 @@
+#content {
+	zoom: 1; }
+
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content p,
+#content ul,
+#content ol,
+#content form,
+#content table,
+#content img,
+#content object {
+	margin-bottom: 7px; }
+
+#content form div label {
+	width: 290px; }
+
+#content form div input,
+#content form div select {
+	height: 40px; }
+
+.item .overview {
+	padding-right: 90px;
+	height: 100px; }
+
+#container #content .scrollButton:hover {
+	cursor: hand; }
+
+#footer {
+	line-height: auto; }
