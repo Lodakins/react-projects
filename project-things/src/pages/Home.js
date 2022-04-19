@@ -15,7 +15,7 @@ function Main(props){
                   style={{backgroundImage:"url('https://gatsby.ghost.io/content/images/2019/01/ghost-headless-feature-image.png')"}}
                 ></div>
                 <div className="post-card-tags"></div>
-                <h2 className="post-card-title">About Ghost + Gatsby</h2>
+                <h2 className="post-card-title">THETHINGSWECREATE</h2>
               </header>
               <section className="post-card-excerpt">
                 Build an API driven static-site with Gatsby.js and use Ghost as a
@@ -248,8 +248,8 @@ function Main(props){
 
 function Home(props){
     return (
-        <div classNameName="viewport">
-            <div classNameName="viewport-top">
+        <div className="viewport">
+            <div className="viewport-top">
                 <Header />
                 <Main />
             </div>

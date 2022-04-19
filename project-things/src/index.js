@@ -8,6 +8,7 @@ import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Product from './pages/Products';
 import Invest from './pages/Invest';
+import About from './pages/About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/product" element={<Product />} />
         <Route exact path="/invest" element={<Invest />} />
+        <Route exact path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
